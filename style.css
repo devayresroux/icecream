@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-primary: "Palanquin", sans-serif;
+  --font-secondary: "Staatliches", cursive;
+  --bg-light: #eff1ff;
+  --bg-dark: #8e9aaf;
+  --bg-heading: #cbc0d3;
+  --bg-subheading: #feeafa;
+  --txt-dark: #23053a;
+  --txt-light: #4a4e69;
+
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: 1.6rem;
+  background-color: var(--bg-light);
+  padding-bottom: 6rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-secondary);
+  font-weight: 400;
+}
+
+header {
+  background-color: var(--bg-dark);
+  text-align: center;
+  padding: 3.2rem 0 2.9rem 0;
+}
+
+header h1 {
+  font-size: 4rem;
+  line-height: 3.4rem;
+  letter-spacing: 0.05em;
+  color: white;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  padding: 0.8rem 0;
+  background-color: var(--bg-heading);
+  margin-top: 1.8rem;
+}
+
+main {
+  max-width: 38.4rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+
+main p {
+  font-size: 1.4rem;
+  line-height: 1.9rem;
+  letter-spacing: 0.05em;
+  color: var(--txt-dark);
+  text-align: center;
+  margin: 1.4rem 0 5rem 0;
+}
+
+.products {
+  display: grid;
+  gap: 3.2rem;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 2rem;
+  animation: fadeInUp 700ms 350ms forwards;
+}
+
+.card h2 {
+  font-size: 2rem;
+  line-height: 3.4rem;
+  letter-spacing: 0.05em;
+  color: var(--txt-light);
+  background-color: var(--bg-subheading);
+  text-transform: uppercase;
+  max-width: fit-content;
+  padding-inline: 2.4rem;
+  border-radius: 2rem;
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+  animation: fadeInDown 700ms 350ms forwards;
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 768px) {
+  main {
+    max-width: 90%;
+  }
+
+  main p {
+    max-width: 620px;
+    margin-inline: auto;
+  }
+
+  .products {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card {
+    height: 250px;
+  }
+
+  .card img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}
